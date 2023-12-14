@@ -13,7 +13,7 @@ import javax.sql.DataSource;
 
 @MapperScan("com.zwanan.mapper")
 @ComponentScans({
-        @ComponentScan("com.zwanan.service")
+        @ComponentScan("com.zwanan")
 })
 @Configuration
 @PropertySource("classpath:jdbc.properties")
