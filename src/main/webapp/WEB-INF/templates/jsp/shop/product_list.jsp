@@ -75,6 +75,7 @@
                     <span style="margin-left: 5px; font-weight: bold">商品: </span>${product.productName}<br>
                     <span style="margin-left: 5px; font-weight: bold">价格: </span>${product.price}<br>
                     <span style="margin-left: 5px; font-weight: bold">剩余: </span>${product.number}<br>
+                    <a href="/shop/detail/${product.id}" style="float: right">详情>></a>
                     <button type="submit" name="buy" value="${product.id}" style="margin-left: 3px">购买</button>
                     <button type="submit" name="cart" value="${product.id}" style="margin-left: 3px">加购物车</button>
                 </div>
