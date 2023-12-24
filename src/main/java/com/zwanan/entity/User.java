@@ -1,8 +1,10 @@
 package com.zwanan.entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 
 @Data
+@AllArgsConstructor
 public class User {
     private Integer id;
     private String username;
@@ -13,4 +15,5 @@ public class User {
     private String phone;
     private String address;
     private String personal;
+    private Integer role;
 }

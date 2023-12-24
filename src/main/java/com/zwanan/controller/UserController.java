@@ -2,6 +2,7 @@ package com.zwanan.controller;
 
 import com.zwanan.entity.User;
 import com.zwanan.mapper.UserMapper;
+import com.zwanan.utils.AuthUtil;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -48,7 +49,7 @@ public class UserController {
     @GetMapping("/welcome")
     public String welcome(Model model, HttpSession session) {
         // 当前没有登录上，直接跳转登录
-        if (!isAuthorize(session)) {
+        if (!AuthUtil.isAuthorize(session)) {
             String loginStatus = "请登录之后进入系统";
             model.addAttribute("loginStatus", loginStatus);
             return "/user/login";
@@ -64,7 +65,7 @@ public class UserController {
      */
     @GetMapping("/show")
     public String show(Model model, HttpSession session) {
-        if (!isAuthorize(session)) {
+        if (!AuthUtil.isAuthorize(session)) {
             String loginStatus = "请登录之后查看自己的信息!";
             model.addAttribute("loginStatus", loginStatus);
             return "/user/login";
@@ -75,7 +76,7 @@ public class UserController {
 
     @GetMapping("/edit")
     public String edit(Model model, HttpSession session) {
-        if (!isAuthorize(session)) {
+        if (!AuthUtil.isAuthorize(session)) {
             String loginStatus = "请登录之后修改自己的信息!";
             model.addAttribute("loginStatus", loginStatus);
             return "/user/login";
@@ -184,15 +185,4 @@ public class UserController {
         session.setAttribute("curUser", curUser);
         return "/user/edit";
     }
-
-
-    /**
-     * 判断是否登陆上
-     * @param session
-     * @return
-     */
-    public Boolean isAuthorize(HttpSession session) {
-        return null != session.getAttribute("curUser");
-    }
-
 }
