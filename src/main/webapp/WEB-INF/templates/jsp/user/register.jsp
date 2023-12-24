@@ -25,11 +25,11 @@
                 </tr>
                 <tr>
                     <td>确认密码</td>
-                    <td><input type="password" name="password2" value="${password2}" size="10"></td>
+                    <td><input type="password" name="password2" value="${password2}" size="50"></td>
                 </tr>
                 <tr>
                     <td>Email</td>
-                    <td><input type="text" name="email" value="${email}" size="10"></td>
+                    <td><input type="text" name="email" value="${email}" size="50"></td>
                 </tr>
                 <tr>
                     <td colspan="2" align="center"><input type="submit" name="submit" value="提交注册信息"> </td>
